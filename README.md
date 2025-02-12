@@ -26,7 +26,7 @@ If you don’t have these files, you can download them from your Namecheap accou
 4. Upload the new SSL files to EC2
    
    ```bash
-     scp -i "PATH/your-key.pem" -r PATH/DomaiName_com.crt Domain_name_com.ca-bundle DomainName_com.key ec2-user@your-server-ip:/etc/ssl/certs/
+     scp -i "PATH/your-key.pem" -r PATH/DomainName_com.crt DomainName_com.ca-bundle DomainName_com.key ec2-user@your-server-ip:/etc/ssl/certs/
    ```
 
 ---
@@ -123,6 +123,24 @@ apachectl -t
 ```
 If the command responds with “Syntax OK”, you can reboot the webserver. To do that, run the command:
 Done! The website is now secured. The installation can be checked 🔗 [Here](https://decoder.link/sslchecker/)
+
+# 🔴  Issue: Missing SSL Private Key (Domain.key) Like This:
+```bash
+$ sudo apachectl -S 
+
+AH00526: Syntax error on line 33 of /etc/apache2/sites-enabled/000-default.conf:
+SSLCertificateKeyFile: file '/etc/ssl/private/DomainName.key' does not exist or is empty
+Action '-S' failed.
+The Apache error log may have more information.
+```
+## If You Have a Backup, Restore the Key
+```bash
+sudo cp /path/to/backup/DomainName_com.key /etc/ssl/private/DomainName.key
+sudo chmod 600 /etc/ssl/private/DomainName.key
+sudo chown root:root /etc/ssl/private/DomainName.key
+
+```
+
 
 ## **Done!** 🎉  
 Your SSL certificate should now be active on your Apache2 server. 🚀
