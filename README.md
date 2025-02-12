@@ -1,6 +1,6 @@
-## To install an SSL certificate on Apache2 (Debian/Ubuntu), follow these steps
+# To install an SSL certificate on Apache2 (Debian/Ubuntu), follow these steps
 
-# SSL Certificate Installation on Apache2 (Debian, Ubuntu)
+## SSL Certificate Installation on Apache2 (Debian, Ubuntu)
 
 This guide walks you through installing an SSL certificate purchased from Namecheap on an Apache2 server running Debian or Ubuntu.
 
