@@ -1,4 +1,4 @@
-# To install an SSL certificate on Apache2 (Debian/Ubuntu), follow these steps **OR** Steps to Reissue and Update the SSL Certificate
+## To install an SSL certificate on Apache2 (Debian/Ubuntu), follow these steps
 
 # SSL Certificate Installation on Apache2 (Debian, Ubuntu)
 
