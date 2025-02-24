@@ -32,16 +32,12 @@ If you don’t have these files, you can download them from your Namecheap accou
 ---
 
 ## **Step 3: Configure Apache to Use SSL**
-1. Enable SSL Module and Virtual Host:
-   ```bash
-   sudo a2enmod ssl
-   sudo a2ensite default-ssl
-   ```
-2. Open your Apache SSL configuration file:
+
+1. Open your Apache SSL configuration file:
    ```bash
    sudo nano /etc/apache2/sites-available/default-ssl.conf
    ```
-3. Modify or add the following lines:
+2. Modify or add the following lines:
    ```apache
    <VirtualHost *:443>
        ServerAdmin admin@yourdomain.com
@@ -64,7 +60,11 @@ If you don’t have these files, you can download them from your Namecheap accou
    </VirtualHost>
    ```
    **Note:** The `your_private_key.key` is the private key you generated when creating the CSR.
-
+3. Enable SSL Module and Virtual Host:
+   ```bash
+   sudo a2enmod ssl
+   sudo a2ensite filename.config
+   ```
 ---
 
 ## **Step 4: Restart Apache**
